@@ -15,6 +15,12 @@ import java.util.List;
 
 /*
 
+Latest:
+no possible:
+java com.examples.AddQuotesExcelColumnValues "'" "'" "4"
+or
+java com.examples.AddQuotesExcelColumnValues "INSERT" "');" "4"
+
 What
  
 Format Excel-column values so can put them, for example, in an sql in-clause
