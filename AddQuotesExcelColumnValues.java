@@ -77,11 +77,16 @@ pause
 cd "C:\dev\javaLearningLab\SampleApps\target\classes"
 
 :: Arg 1: 
-:: Typ av citat-tecken som värdena ska wrappas med 
+:: Typ av citat-tecken som värdena ska start-wrappas med 
 :: single quote då "'" 
 :: dubbelfnuttar då "\""  OBS \behövs för denna!
 
 :: Arg 2: 
+:: Typ av citat-tecken som värdena ska slut-wrappas med 
+:: single quote då "'" 
+:: dubbelfnuttar då "\""  OBS \behövs för denna!
+
+:: Arg 3: 
 ::Efter hur många värden ska line-break sättas in
 
 java com.examples.AddQuotesExcelColumnValues "'" "'" "4"
