@@ -26,10 +26,10 @@ You can put them in select * from t where val in('val1', 'val2', 'val3').
 Precondition
  
 Här:
-C:\dev\javaLearningLab\SampleApps\src\main\resources
+C:\devJavaLab\javaLearningLab\SampleApps\src\main\resources\
 måste du, första gången, ha column_values_in.txt och column_values_out.txt !
-För när man kör mvn clean install(dvs under byggsteget) då läggs kopior av dom under:
-C:\dev\javaLearningLab\SampleApps\target\classes 
+För när man kör mvn clean install(dvs under byggsteget) då läggs kopior av dom till:
+C:\devJavaLab\javaLearningLab\SampleApps\target\classes 
 
 Kör denna java-klass i Netbeans(shift + F6) så att den blir ny-kompilerad 
 
@@ -47,7 +47,7 @@ i column_values_in.txt
 
 OUTFILEN (OBS dos-scriptet visar upp utfilen!)
 de formaterade raderna finns här:
-C:\dev\javaLearningLab\SampleApps\target\classes
+C:\devJavaLab\javaLearningLab\SampleApps\target\classes
 i column_values_out.txt 
 
 
@@ -77,16 +77,11 @@ pause
 cd "C:\dev\javaLearningLab\SampleApps\target\classes"
 
 :: Arg 1: 
-:: Typ av citat-tecken som värdena ska start-wrappas med 
+:: Typ av citat-tecken som värdena ska wrappas med 
 :: single quote då "'" 
 :: dubbelfnuttar då "\""  OBS \behövs för denna!
 
 :: Arg 2: 
-:: Typ av citat-tecken som värdena ska slut-wrappas med 
-:: single quote då "'" 
-:: dubbelfnuttar då "\""  OBS \behövs för denna!
-
-:: Arg 3: 
 ::Efter hur många värden ska line-break sättas in
 
 java com.examples.AddQuotesExcelColumnValues "'" "'" "4"
@@ -112,7 +107,7 @@ public class AddQuotesExcelColumnValues {
             n.myMain(args[0], args[1], args[2]);
         } catch (ArrayIndexOutOfBoundsException e) {
 
-            n.myMain("", ""); // om man kör utan argument, tex utan att köra igång via .bat-filen
+            n.myMain("AA", "BB", ""); // om man kör utan argument, tex utan att köra igång via .bat-filen
         }
     }
 
