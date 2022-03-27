@@ -84,7 +84,7 @@ cd "C:\dev\javaLearningLab\SampleApps\target\classes"
 :: Arg 2: 
 ::Efter hur många värden ska line-break sättas in
 
-java com.examples.AddQuotesExcelColumnValues "'"  "4"
+java com.examples.AddQuotesExcelColumnValues "'" "'" "4"
 
 :: undrar om det behövs en pause här?
 :: 
@@ -104,24 +104,28 @@ public class AddQuotesExcelColumnValues {
 
         try {
 
-            n.myMain(args[0], args[1]);
+            n.myMain(args[0], args[1], args[2]);
         } catch (ArrayIndexOutOfBoundsException e) {
 
             n.myMain("", ""); // om man kör utan argument, tex utan att köra igång via .bat-filen
         }
     }
 
-    public void myMain(String qSign, String lineBreak) throws FileNotFoundException, IOException {
+    public void myMain(String qSign, String qSign2, String lineBreak) throws FileNotFoundException, IOException {
 
         // PRE-CONFIGURATION (default values) 
         // Quote sign to wrap the column values with ( "" or '' is your choice to make)
         String quoteSign = "\'"; // "\""
+        String quoteSign2 = "\'"; // "\""
 
         // After how many values/rows should line break be added
         int modulusDenominator = 4; // denominator = nämnare, 4 = radbryt efter var fjärde kolumnvärde
 
         if (!qSign.isEmpty()) {
             quoteSign = qSign;
+        }
+        if (!qSign2.isEmpty()) {
+            quoteSign2 = qSign2;
         }
         if (!lineBreak.isEmpty()) {
             modulusDenominator = Integer.valueOf(lineBreak);
@@ -171,12 +175,12 @@ public class AddQuotesExcelColumnValues {
 
                 if (isCurrentRowLastRow(rows, row)) {
 
-                    formatedRow = quoteSign + row.replace("\n\r", "") + quoteSign;
+                    formatedRow = quoteSign + row.replace("\n\r", "") + quoteSign2;
                     formatedList.add(formatedRow);
                     break;
                 } else {
 
-                    formatedRow = quoteSign + row.replace("\n\r", "") + quoteSign + ",";
+                    formatedRow = quoteSign + row.replace("\n\r", "") + quoteSign2 + ",";
                     formatedList.add(formatedRow);
                     continue;
                 }
